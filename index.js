@@ -2,10 +2,11 @@ var fs = require('fs');
 var express = require("express");
 var bodyParser = require("body-parser");
 var data = fs.readFileSync('db/data.json');
-var chats = JSON.parse(data);
+var chatObject = JSON.parse(data);
 const PORT = process.env.PORT || 3000;
 var app = express();
 
+//middleware: request handling
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -17,28 +18,39 @@ function listening() {
 
 app.use(express.static('public'));
 
-//returns the whole chat data
-app.get('/api/v1/chat', getChats);
+//get chat data
+app.get('/api/v1/chat', getChatData);
 
-//add a chat data
-app.post('/api/v1/chat', addChat);
+//add a chat element to data
+app.post('/api/v1/chat', addChatDataElement);
 
-function getChats(request, response) {
-    response.json(chats);
+//clear chat data
+app.delete('/api/v1/chat', clearChatData);
+
+function getChatData(request, response) {
+    console.log('Getting Complete');
+    response.json(chatObject.data);
 }
 
-function addChat(request, response) {
-    const time = new Date();
-    const chat = {
-        name: request.body.name,
-        line: request.body.line
-    };
-    chats[time] = chat;
-    var data = JSON.stringify(chatLines, null, 2);
+function addChatDataElement(request, response) {
+    chatObject.data.push({name: request.body.name, message: request.body.message, line: chatObject.data.length});
+    var data = JSON.stringify(chatObject, null, 2);
     fs.writeFile('db/data.json', data, finished);
 
     function finished(err) {
-        console.log('Writing complete');
-        response.json(chat);
+        console.log('Writing Complete');
+        response.json(chatObject.data);
     }
 }
+
+function clearChatData(request, response) {
+    chatObject.data = [];
+    var data = JSON.stringify(chatObject, null, 2);
+    fs.writeFile('db/data.json', data, finished);
+
+    function finished(err) {
+        console.log('Writing Complete');
+        response.json(chatObject.data);
+    }
+}
+

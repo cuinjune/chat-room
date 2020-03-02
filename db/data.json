@@ -1,6 +1,40 @@
 {
-    "2020-03-01T16:32:44.460Z": {
-        "name": "John",
-        "message": "Hello World"
+  "description": "data used for the chat room",
+  "data": [
+    {
+      "name": "David",
+      "message": "That's Cool man!!",
+      "line": 0
+    },
+    {
+      "name": "David",
+      "message": "That's Cool man!!",
+      "line": 1
+    },
+    {
+      "name": "David",
+      "message": "That's Cool man!!",
+      "line": 2
+    },
+    {
+      "name": "David",
+      "message": "That's Cool man!!",
+      "line": 3
+    },
+    {
+      "name": "David",
+      "message": "That's Cool man!!",
+      "line": 4
+    },
+    {
+      "name": "David",
+      "message": "That's Cool man!!",
+      "line": 5
+    },
+    {
+      "name": "David",
+      "message": "That's Cool man!!",
+      "line": 6
     }
+  ]
 }
