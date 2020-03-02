@@ -19,13 +19,19 @@ function listening() {
 app.use(express.static('public'));
 
 //get chat data
-app.get('/api/v1/chat', getChatData);
+app.get('/api/v1/chat/data', getChatData);
 
 //add a chat element to data
-app.post('/api/v1/chat', addChatDataElement);
+app.post('/api/v1/chat/data', addChatDataElement);
 
 //clear chat data
-app.delete('/api/v1/chat', clearChatData);
+app.delete('/api/v1/chat/data', clearChatData);
+
+//get the number of visitors
+app.get('/api/v1/chat/numvisitors', getChatNumVisitors);
+
+//update the number of visitors
+app.put('/api/v1/chat/numvisitors/:num', updateChatNumVisitors);
 
 function getChatData(request, response) {
     console.log('Getting Complete');
@@ -33,7 +39,7 @@ function getChatData(request, response) {
 }
 
 function addChatDataElement(request, response) {
-    chatObject.data.push({name: request.body.name, message: request.body.message, line: chatObject.data.length});
+    chatObject.data.push({name: request.body.name, message: request.body.message});
     var data = JSON.stringify(chatObject, null, 2);
     fs.writeFile('db/data.json', data, finished);
 
@@ -54,3 +60,18 @@ function clearChatData(request, response) {
     }
 }
 
+function getChatNumVisitors(request, response) {
+    console.log('Getting Complete');
+    response.json(chatObject.numVisitors);
+}
+
+function updateChatNumVisitors(request, response) {
+    chatObject.numVisitors = Number(request.params.num);
+    var data = JSON.stringify(chatObject, null, 2);
+    fs.writeFile('db/data.json', data, finished);
+
+    function finished(err) {
+        console.log('Writing Complete');
+        response.json(chatObject.data);
+    }
+}

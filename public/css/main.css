@@ -5,38 +5,43 @@
 }
 
 html {
-    font-size: 20px;
+    font-size: 18px;
 }
 
-/* .debug {
-    border: 1px solid red;
-} */
-
-body{
+body {
     font-family: Helvetica, sans-serif;
+}
+
+#header {
+    margin-left: 10px;
+    line-height: 3.3em;
 }
 
 #chatArea
 {
     position: absolute;
-    top: 50px;
+    top: 60px;
     width: calc(100% - 25px);
-    height: calc(82%);
+    height: calc(84%);
     margin-left: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
     border: 1px solid black;
 }
 
-#inputArea
-{
+.chatArea__text {
+    font-size: 16px;
+    line-height: 1.25em;
+    text-indent: 5px;
+}
+
+#inputArea {
     position:absolute;
-    bottom:10px;
+    bottom:12px;
     width:100%;
 }
 
-#inputArea__name
-{
+#inputArea__name {
     margin-left: 10px;
     width:15%;
     height:30px;
@@ -50,8 +55,7 @@ body{
     text-indent: 5px;
 }
 
-#inputArea__message
-{
+#inputArea__message {
     margin-left: 5px;
     width:74%;
     height:30px;
@@ -65,11 +69,10 @@ body{
     text-indent: 5px;
 }
 
-#inputArea__sendButton
-{
+#inputArea__sendButton {
     margin-left: 10px;
     position: absolute;
-    width:7%;
+    width:8%;
     height:30px;
     border: 1px solid black;
     font-size: 12px;
