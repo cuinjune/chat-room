@@ -56,13 +56,12 @@ function addDivToChatArea(name, message) {
     $div.className = "chatArea__text";
     $div.textContent = `${name}: ${message}`;
     $chatArea.appendChild($div);
-
     $chatArea.scrollTop = $chatArea.scrollHeight;
 }
 
 function sendCurrentChatMessage() {
-    $name = document.getElementById("inputArea__name").value;
-    $message = document.getElementById("inputArea__message").value;
+    const $name = document.getElementById("inputArea__name").value;
+    const $message = document.getElementById("inputArea__message").value;
     addChatDataElement($name, $message);
     addDivToChatArea($name, $message);
     document.getElementById("inputArea__message").value = "";
@@ -93,7 +92,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         numVisitors = 0;
     }
     await updateChatNumVisitors(numVisitors);
-    $name = document.getElementById("inputArea__name");
+    let $name = document.getElementById("inputArea__name");
     $name.textContent = `Guest${numVisitors}`;
 
     //send button listener
