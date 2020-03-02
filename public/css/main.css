@@ -5,7 +5,7 @@
 }
 
 html {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 /* .debug {
@@ -14,4 +14,63 @@ html {
 
 body{
     font-family: Helvetica, sans-serif;
+}
+
+#chatArea
+{
+    position: absolute;
+    top: 50px;
+    width: calc(100% - 25px);
+    height: calc(82%);
+    margin-left: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+}
+
+#inputArea
+{
+    position:absolute;
+    bottom:10px;
+    width:100%;
+}
+
+#inputArea__name
+{
+    margin-left: 10px;
+    width:15%;
+    height:30px;
+    resize: none;
+    border: 1px solid black;
+    font-size: 16px;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+    line-height: 1.7em;
+    text-indent: 5px;
+}
+
+#inputArea__message
+{
+    margin-left: 5px;
+    width:74%;
+    height:30px;
+    resize: none;
+    border: 1px solid black;
+    font-size: 16px;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+    line-height: 1.7em;
+    text-indent: 5px;
+}
+
+#inputArea__sendButton
+{
+    margin-left: 10px;
+    position: absolute;
+    width:7%;
+    height:30px;
+    border: 1px solid black;
+    font-size: 12px;
 }
