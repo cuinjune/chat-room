@@ -1,6 +1,6 @@
 # Chat Room API
 
-Here are the list of APIs and how you can use them using the Terminal commnad.
+Here are the list of APIs and how you can use them using the Terminal command.
 
 ### Getting the chat data (GET)
 
