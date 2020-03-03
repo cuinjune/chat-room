@@ -1,6 +1,6 @@
 {
   "description": "data used for the Chat Room application",
-  "numVisitors": 3,
+  "numVisitors": 4,
   "data": [
     {
       "name": "David",
