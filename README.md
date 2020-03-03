@@ -4,7 +4,7 @@ This is the week 4 assignment for the ITP class Dynamic Web Development.<br />
 
 This week, the assignment was to write server-side JavaScript to create an API that accepts AJAX request coming from a client-side web application to create, read, update, and delete data that are living on the server.
 
-I decided to create a simple chat room application that everyone can use.
+I decided to create a simple chat room application that anyone can use.
 
 Here's the [Live Demo on Glitch](https://cuinjune-chat-room.glitch.me/)
 
