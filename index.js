@@ -72,6 +72,6 @@ function updateChatNumVisitors(request, response) {
 
     function finished(err) {
         console.log('Writing Complete');
-        response.json(chatObject.data);
+        response.json(chatObject.numVisitors);
     }
 }
