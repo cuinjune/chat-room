@@ -34,7 +34,7 @@ app.get('/api/v1/chat/numvisitors', getChatNumVisitors);
 app.put('/api/v1/chat/numvisitors/:num', updateChatNumVisitors);
 
 function getChatData(request, response) {
-    console.log('Getting Complete');
+    // console.log('Getting Complete');
     response.json(chatObject.data);
 }
 
@@ -44,7 +44,7 @@ function addChatDataElement(request, response) {
     fs.writeFile('db/data.json', data, finished);
 
     function finished(err) {
-        console.log('Writing Complete');
+        // console.log('Writing Complete');
         response.json(chatObject.data);
     }
 }
@@ -55,13 +55,13 @@ function clearChatData(request, response) {
     fs.writeFile('db/data.json', data, finished);
 
     function finished(err) {
-        console.log('Writing Complete');
+        // console.log('Writing Complete');
         response.json(chatObject.data);
     }
 }
 
 function getChatNumVisitors(request, response) {
-    console.log('Getting Complete');
+    // console.log('Getting Complete');
     response.json(chatObject.numVisitors);
 }
 
@@ -71,7 +71,7 @@ function updateChatNumVisitors(request, response) {
     fs.writeFile('db/data.json', data, finished);
 
     function finished(err) {
-        console.log('Writing Complete');
+        // console.log('Writing Complete');
         response.json(chatObject.numVisitors);
     }
 }
