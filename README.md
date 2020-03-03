@@ -9,10 +9,12 @@ I decided to create a simple chat room application that everyone can use.
 Here's the [Live Demo on Glitch](https://cuinjune-chat-room.glitch.me/)
 
 ## Run it on your own computer
-1. Follow [this guide](https://github.com/itp-dwd/2020-spring/blob/master/guides/installing-nodejs.md) to install node.js
-2. Run the following in the Terminal
+1. Installation of node.js is required. Follow [this guide](https://github.com/itp-dwd/2020-spring/blob/master/guides/installing-nodejs.md) to install it.
+2. Run the following commands in the Terminal
 ```
-cd the/project/root/path
+git clone https://github.com/cuinjune/chat-room.git
+cd chat-room
+npm install dependencies
 npm start
 ```
 3. Open your web browser and navigate to http://localhost:3000
