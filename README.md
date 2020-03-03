@@ -8,6 +8,8 @@ I decided to create a simple chat room application that anyone can use.
 
 Here's the [Live Demo on Glitch](https://cuinjune-chat-room.glitch.me/)
 
+Here are the [list of APIs](API.md)
+
 ## Setup
 1. Installation of node.js is required. Follow [this guide](https://github.com/itp-dwd/2020-spring/blob/master/guides/installing-nodejs.md) to install it.
 2. Run the following commands in the Terminal
