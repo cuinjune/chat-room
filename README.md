@@ -1,4 +1,4 @@
-# chat-room
+# Chat Room
 <img src="screenshot.png" alt="Screenshot" width="1000"/>
 This is the week 4 assignment for the ITP class Dynamic Web Development.<br />
 
@@ -8,7 +8,7 @@ I decided to create a simple chat room application that everyone can use.
 
 Here's the [Live Demo on Glitch](https://cuinjune-chat-room.glitch.me/)
 
-## Run it on your own computer
+## Setup
 1. Installation of node.js is required. Follow [this guide](https://github.com/itp-dwd/2020-spring/blob/master/guides/installing-nodejs.md) to install it.
 2. Run the following commands in the Terminal
 ```
