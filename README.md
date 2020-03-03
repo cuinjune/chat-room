@@ -2,9 +2,7 @@
 <img src="screenshot.png" alt="Screenshot" width="1000"/>
 This is the week 4 assignment for the ITP class Dynamic Web Development.<br />
 
-This week, the assignment was to leap into the world of server-side programming with Node.js/Express.js.
-
-* Write server-side JavaScript to create an API that accepts AJAX request coming from a client-side web application to create, read, update, and delete data that are living on the server.
+This week, the assignment was to write server-side JavaScript to create an API that accepts AJAX request coming from a client-side web application to create, read, update, and delete data that are living on the server.
 
 I decided to create a simple chat room application that everyone can use.
 
