@@ -38,7 +38,6 @@ async function updateChatNumVisitors(num) {
     return chatJson;
 }
 
-
 function inputAreaNameKeyPressed() {
     var key = window.event.keyCode;
     if (key === 13) {
@@ -56,7 +55,7 @@ function addDivToChatArea(name, message) {
     $div.className = "chatArea__text";
     $div.textContent = `${name}: ${message}`;
     $chatArea.appendChild($div);
-    $chatArea.scrollTop = $chatArea.scrollHeight;
+    // $chatArea.scrollTop = $chatArea.scrollHeight;
 }
 
 function sendCurrentChatMessage() {
@@ -79,11 +78,21 @@ function inputAreaMessageKeyPressed() {
     }
 }
 
+var prevChatDataLength;
+
 window.addEventListener('DOMContentLoaded', async () => {
-    const chatData = await getChatData();
-    for (let i = 0; i < chatData.length; ++i) {
-        addDivToChatArea(chatData[i].name, chatData[i].message);
-    }
+    setInterval(async function () {
+        const chatData = await getChatData();
+        const $chatArea = document.getElementById("chatArea");
+        $chatArea.textContent = '';
+        for (let i = 0; i < chatData.length; ++i) {
+            addDivToChatArea(chatData[i].name, chatData[i].message);
+        }
+        if (prevChatDataLength != chatData.length)
+            $chatArea.scrollTop = $chatArea.scrollHeight;
+        prevChatDataLength = chatData.length;
+    }, 100);
+
     let numVisitors = await getChatNumVisitors();
     if (numVisitors < 1000000) {
         numVisitors++;
